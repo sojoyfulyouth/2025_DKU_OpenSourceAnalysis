@@ -12,3 +12,14 @@ This is a place for studying Open Source Software Analysus (BigData) in Dankook 
 If you get an error there are no commands, install git with following command :
 
     sudo apt-get install git
+
+
+## Lab1
+If you want to proceed to Lab1, go to command below :
+
+    cd lab1_skiplist
+
+    make
+
+    ./lab1_skiplist
+
