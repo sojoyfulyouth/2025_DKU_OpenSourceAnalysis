@@ -63,7 +63,18 @@ struct SkipList<Key>::Node {
 // Generate a random level for new nodes
 template<typename Key>
 int SkipList<Key>::RandomLevel() {
-    // To be implemented by students
+
+    ////////////// To be implemented by students //////////////////
+
+    int level = 1;
+    while ((rand() / (RAND_MAX + 1.0)) < probability && level < max_level) {
+        level++;
+    }
+    return level;
+
+    ////////////// To be implemented by students //////////////////
+
+
     return 1; // Default return value (students should modify this)
 }
 
@@ -71,7 +82,19 @@ int SkipList<Key>::RandomLevel() {
 template<typename Key>
 SkipList<Key>::SkipList(int max_level, float probability)
     : max_level(max_level), probability(probability) {
-    // To be implemented by students
+        
+    ////////////// To be implemented by students //////////////////
+
+    // 헤드 노드 생성 (가장 낮은 값으로 설정)
+    head = new Node(0, max_level);
+
+    // 모든 레벨의 next 포인터를 nullptr로 초기화
+    for (int i = 0; i < max_level; ++i) {
+        head->next[i] = nullptr;
+    }
+
+    ////////////// To be implemented by students //////////////////
+
 }
 
 // Insert function (inserts a key into SkipList)
